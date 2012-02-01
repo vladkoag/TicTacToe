@@ -1,0 +1,64 @@
+﻿body
+{
+    font-size:10pt;
+    font-family:Tahoma,verdana,helvetica,arial,sans-serif;
+    color:#000000;
+    background-color:#ffffff;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+#game-types {
+    padding-bottom: 1em; 
+}
+
+#game-types > ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+#game-types > ul li {
+    padding: 0.3em 0;
+}
+
+#game-types #game-id {
+    width: 270px;
+}
+
+.hidden {
+    display: none;
+}
+
+.detail {
+    padding-left: 2em;
+}
+
+#messages
+{
+    width: 50em;
+    border: 1px solid #ccc;
+    height: 7em;
+    float: left;
+    overflow: auto;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#game-board table td:hover {
+    background-color: #eee;
+}

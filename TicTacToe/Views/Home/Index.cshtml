@@ -1,0 +1,63 @@
+﻿@using TicTacToe.Models
+@model GameModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.signalR.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ttt.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/ttt.css")" rel="Stylesheet" />
+</head>
+<body>
+    <div>
+        <div id="game-types">
+            <ul id="game-type-selection">
+                <li>
+                    <input type="radio" name="type" value="server" /> Create game
+                    <div class="hidden detail">
+                        New game ID: <span id="game-new-id">@Model.NewGameId</span>
+                        <button id="button-create">Create</button>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" name="type" value="client" /> Join the game
+                    <div class="hidden detail">
+                        Enter game ID: 
+                        <input type="text" id="game-id"/>
+                        <button id="button-join">Join</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="game-board">
+            <table>
+            @for (int y = 0; y < Constants.SIZE; y++)
+            {
+                <tr>
+                @for (int x = 0; x < Constants.SIZE; x++)
+                {
+                    var id = (x + "_" + y);
+                
+                    <td id="@id"></td>
+                }
+                </tr>
+            }
+            </table>
+            
+            <ul id="messages">
+            </ul>
+            <div style="clear:both"></div>
+            <button id="button-leave">Leave the game</button>
+        </div>
+    </div>
+</body>
+</html>
